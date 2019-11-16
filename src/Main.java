@@ -13,6 +13,7 @@ public class Main {
         Fib findMinFib = new Fib(0, 0);
         Gold findMinGold = new Gold(0, 0);
         Dif findMin = new Dif(0, 0);
+        Otrezok findOtrez = new Otrezok(30, 0.004);
 
         try(FileWriter writer = new FileWriter("F:\\Idea Intellij\\Projects\\OptimMethods\\src\\Dif.txt", true))
         {
@@ -148,6 +149,13 @@ public class Main {
         }catch(IOException ex){
             System.out.println(ex.getMessage());
         }
+
+        double[] resPart2;
+
+        resPart2 = findOtrez.findMinOtr();
+
+        double finalRes = (resPart2[1] - resPart2[0])/2;
+        System.out.println("Min is = " + finalRes);
 
     }
 }
