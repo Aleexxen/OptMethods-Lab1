@@ -40,10 +40,15 @@ public class Otrezok {
 
             step = step * 2;
             x1 = x1 + step;
+            if(!(0 <= x1 && x1 <= 100 && 0 <= (x1 + step) && (x1 + step) <= 100)){
+                x1 = x1 - step;
+                step = step / 2;
+                break;
+            }
 
         }
 
-        otr[0] = x1 - step;
+        otr[0] = x1;
         otr[1] = x1 + step;
 
         return otr;
